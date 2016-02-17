@@ -1,0 +1,52 @@
+<form action="/comments/app" method="post" target="hiddle-iframe" class="comments-form"  onsubmit="return validate_editor_{{ objclass }}_{{ objid }}_form(this)">
+    {% csrf_token %}
+    <p>昵称: <input class="input" type="text" name="author" /></p>
+    <p>邮箱: <input class="input" type="email" name="email" /></p>
+    <p>网站: <input class="input" type="url" name="url" /></p>
+    <textarea name="content" id="textarea-{{ objclass }}-{{ objid }}" rows="7"></textarea>
+    <input type="hidden" name="obj_class" value="{{ objclass }}"/>
+    <input type="hidden" name="obj_id" value="{{ objid }}"/>
+    <input class="submit" type="submit" value="提交"/>
+</form>
+<iframe name="hiddle-iframe" style="display:none"></iframe>
+  
+<script type="text/javascript">
+	function validate_editor_{{ objclass }}_{{ objid }}_form(thisform)//对表单各项进行验证
+	{
+	with (thisform)
+		{
+			if (validate_required(author, "昵称是必填项!")==false)
+			{
+				author.focus();
+				return false;
+			}
+			if (validate_required(email, "邮箱是必填项!")==false)
+			{
+				email.focus();
+				return false;
+			}
+			if (validate_email(email, "请输入有效的邮箱地址!")==false)
+			{
+				email.focus();
+				return false;
+			}
+			if (validate_textarea("textarea-{{ objclass }}-{{ objid }}", "评论怎么可以是空的？")==false)
+			{
+				return false;
+			}
+			alert('评论成功，请刷新页面')
+		}
+	}
+	<!--这里引用jquery和wangEditor.js-->
+    var editor_{{ objclass }}_{{ objid }} = new wangEditor('textarea-{{ objclass }}-{{ objid }}');
+    editor_{{ objclass }}_{{ objid }}.config.menus = [
+        'bold',
+        'underline',
+        'italic',
+        'strikethrough',
+        'link',
+        'insertcode',
+        'eraser'
+     ];
+    editor_{{ objclass }}_{{ objid }}.create();
+</script>

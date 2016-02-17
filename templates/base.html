@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="/media/css/base.css" type="text/css" />
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <div id="left-bodyer">
+    <div id="left-content">
+        <a id="site-name" class="main-button" href="/">王宁的博客</a>
+        <ul id="navigation" class="vertical-list">
+        {% for cla in classification %}
+            <li><a class="button" href="/class/{{ cla.id }}">{{ cla.classname }}</a></li>
+        {% endfor %}
+        <li><a class="button" href="/about">关于</a></li>
+        </ul>
+    </div>
+    </div>
+
+    <div id="main-bodyer">
+        <div id="main-content">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+{% block bodyend %}{% endblock %}
+</body>
+</html>

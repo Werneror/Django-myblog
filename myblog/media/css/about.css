@@ -1,0 +1,46 @@
+.page-title
+{
+    width:100%;
+    display:block;
+    overflow:visible;
+    font-size:155%;
+    text-shadow:#f3f3f3 1px 1px 0px, #b2b2b2 1px 2px 0;
+	margin-top: 30px;
+	margin-bottom: 20px;
+}
+.about
+{
+    margin-top:10px;
+    padding: 30px;
+    padding-bottom: 25px; 
+    background-color: #ededed;
+    border-bottom: 2px solid #ccc;
+    font-size:110%;
+}
+.about-me-title
+{
+	margin-bottom: 15px;
+}
+#myname
+{
+    font-size: 35px;
+}
+#avatar
+{
+	width: 25px;
+	height: 25px;
+	border-radius:50%;
+}
+.about--content
+{
+	font-size: 110%;
+}
+.about-text
+{
+	text-indent:2em;
+}
+.about-date
+{
+	float: right;
+	margin-right: 20px;
+}

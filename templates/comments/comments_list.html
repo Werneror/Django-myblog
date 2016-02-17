@@ -1,0 +1,25 @@
+{% if recu == True %}
+	<link rel="stylesheet" href="/media/css/comments_list.css" type="text/css" />
+	<script src="/media/js/comments_list.js" type="text/javascript"></script>
+{% endif %}
+{% for comment in comments %}
+    {% if comment.author and comment.content %}
+		<div class="comment-date_time {% if recu == False %}reply{% endif %}">{{ comment.date_time | date:"Y-m-d H:i:s"}}</div>
+		<div class="comment-author {% if recu == False %}reply{% endif %}">{{ comment.author }}</div>
+		<div class="comment-content {% if recu == False %}reply{% endif %}">{{ comment.content | safe }}</div>
+		<div class="comment-reply">
+		{% if recu == True %}
+			{% load load_comments %}
+			{% comments_list "comment" comment.id False %}
+			<a id="link-{{ comment.id }}" href="JavaScript:display_table('link-{{ comment.id }}', 'comments-reply-form-{{ comment.id }}');">回复</a>
+		</div>
+	    <div id="comments-reply-form-{{ comment.id }}" class="comments-reply-form" style="display:none">
+    		{% comments_form "comment" comment.id %}
+    	</div>
+		{% endif %}
+    {% endif %}
+{% empty %}
+	{% if recu == True %}
+    	<div class="no-comment">还没有评论......</div>
+	{% endif %}
+{% endfor %}

@@ -1,0 +1,45 @@
+.comment-date_time
+{
+    font-size:110%;
+    float: right;
+    padding-bottom: 2px;
+	margin-top: 5px;
+}
+.comment-author
+{
+    font-size:110%;
+    font-weight:bold;
+    padding-bottom: 2px;
+	margin-top: 5px;
+}
+.comment-content
+{
+    border-style: solid;
+    border-width: 3px;
+    border-color: #DDDDDD;
+	padding-left: 3px;
+}
+.comment-reply
+{
+    padding-top: 6px;
+    padding-bottom: 16px;
+}
+.no-comment
+{
+    padding-bottom: 20px;
+}
+.comments-reply-form
+{
+    margin-left: 30px;
+}
+.reply
+{
+	margin-left: 20px;
+}
+@media screen and (max-width:500px)
+{
+	.comments-reply-form
+	{
+		margin-left: 15px;
+	}
+}

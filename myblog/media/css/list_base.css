@@ -1,0 +1,47 @@
+.page-title
+{
+    width:100%;
+    display:block;
+    overflow:visible;
+    font-size:155%;
+    text-shadow:#f3f3f3 1px 1px 0px, #b2b2b2 1px 2px 0
+}
+.article-show
+{
+    margin-top:4px;
+    font-family: Arial, sans-serif;
+    font-size: 140%;
+    color: #666;
+    padding: 4px;
+    background-color: #ededed;
+    border-bottom: 2px solid #ccc;
+}
+a:link.article-title, a:visited.article-title
+{
+    color:#515151;
+}
+a:hover.article-title, a:active.article-title
+{
+    color:#000000;
+} 
+.article-info-div
+{
+    font-size: 70%;
+}
+.article-info-content
+{
+  margin-left: 6px;
+  margin-right: 6px;
+}
+@media screen and (max-width:500px)
+{
+    .article-date
+    {
+        display: none;
+    }
+}    
+.article-date
+{
+  float: right;
+}
+
