@@ -8,7 +8,7 @@ import settings
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^66666/', include(admin.site.urls)),
+    url(r'^admin/', include(admin.site.urls)),
     url(r'^$', homepage),
     url(r'^article/(\w+)$', show_article),
     url(r'^class/(\w+)$', show_class),
